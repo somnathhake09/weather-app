@@ -1,7 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 const API_KEY = process.env.REACT_APP_WEATHER_KEY;
+
+const getEmoji = (icon) => {
+  if (icon.includes('01')) return '☀️';
+  if (icon.includes('02')) return '🌤️';
+  if (icon.includes('03')) return '☁️';
+  if (icon.includes('04')) return '☁️';
+  if (icon.includes('09')) return '🌧️';
+  if (icon.includes('10')) return '🌦️';
+  if (icon.includes('11')) return '⛈️';
+  if (icon.includes('13')) return '❄️';
+  if (icon.includes('50')) return '🌫️';
+  return '🌡️';
+};
+
+const getBackground = (condition) => {
+  if (!condition) return 'default';
+  const c = condition.toLowerCase();
+  if (c.includes('clear')) return 'sunny';
+  if (c.includes('cloud')) return 'cloudy';
+  if (c.includes('rain') || c.includes('drizzle')) return 'rainy';
+  if (c.includes('thunder')) return 'thunder';
+  if (c.includes('snow')) return 'snow';
+  if (c.includes('mist') || c.includes('fog')) return 'mist';
+  return 'default';
+};
 
 function App() {
   const [city, setCity] = useState('');
@@ -13,18 +38,6 @@ function App() {
     return JSON.parse(localStorage.getItem('searchHistory')) || [];
   });
   const [bg, setBg] = useState('default');
-
-  const getBackground = (condition) => {
-    if (!condition) return 'default';
-    const c = condition.toLowerCase();
-    if (c.includes('clear')) return 'sunny';
-    if (c.includes('cloud')) return 'cloudy';
-    if (c.includes('rain') || c.includes('drizzle')) return 'rainy';
-    if (c.includes('thunder')) return 'thunder';
-    if (c.includes('snow')) return 'snow';
-    if (c.includes('mist') || c.includes('fog')) return 'mist';
-    return 'default';
-  };
 
   const fetchWeather = async (searchCity) => {
     const target = searchCity || city;
@@ -121,11 +134,9 @@ function App() {
         {weather && (
           <div className="weather-info">
             <h2>{weather.name}, {weather.sys.country}</h2>
-            <img
-              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-              alt={weather.weather[0].description}
-              onError={(e) => e.target.style.display='none'}
-            />
+            <div style={{ fontSize: '72px', margin: '8px 0' }}>
+              {getEmoji(weather.weather[0].icon)}
+            </div>
             <p className="temp">{Math.round(weather.main.temp)}°C</p>
             <p className="desc">{weather.weather[0].description}</p>
             <div className="details">
@@ -143,11 +154,9 @@ function App() {
               {forecast.map((day, i) => (
                 <div key={i} className="forecast-card">
                   <p className="day">{new Date(day.dt * 1000).toLocaleDateString('en', { weekday: 'short' })}</p>
-                  <img
-                    src={`https://openweathermap.org/img/wn/${day.weather[0].icon}.png`}
-                    alt={day.weather[0].description}
-                    onError={(e) => e.target.style.display='none'}
-                  />
+                  <div style={{ fontSize: '28px' }}>
+                    {getEmoji(day.weather[0].icon)}
+                  </div>
                   <p className="f-temp">{Math.round(day.main.temp)}°C</p>
                 </div>
               ))}

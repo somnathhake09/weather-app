@@ -89,6 +89,19 @@ h1 {
 
 .loc-btn:hover { background: rgba(255, 100, 0, 0.4) !important; }
 
+.unit-btn {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 100, 0, 0.4);
+  background: rgba(255, 100, 0, 0.2);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.unit-btn:hover { background: rgba(255, 100, 0, 0.4); }
+
 .history {
   display: flex;
   flex-wrap: wrap;
@@ -160,9 +173,8 @@ h1 {
 }
 
 .details {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
   background: rgba(255, 100, 0, 0.1);
   border-radius: 12px;

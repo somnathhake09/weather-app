@@ -38,6 +38,12 @@ function App() {
     return JSON.parse(localStorage.getItem('searchHistory')) || [];
   });
   const [bg, setBg] = useState('default');
+  const [unit, setUnit] = useState('C');
+
+  const convertTemp = (temp) => {
+    if (unit === 'C') return `${Math.round(temp)}°C`;
+    return `${Math.round((temp * 9 / 5) + 32)}°F`;
+  };
 
   const fetchWeather = async (searchCity) => {
     const target = searchCity || city;
@@ -117,6 +123,12 @@ function App() {
             onKeyDown={handleKey}
           />
           <button onClick={() => fetchWeather()}>Search</button>
+          <button
+            className="unit-btn"
+            onClick={() => setUnit(unit === 'C' ? 'F' : 'C')}
+          >
+            °{unit === 'C' ? 'F' : 'C'}
+          </button>
           <button className="loc-btn" onClick={fetchByLocation}>📍</button>
         </div>
 
@@ -137,13 +149,13 @@ function App() {
             <div style={{ fontSize: '72px', margin: '8px 0' }}>
               {getEmoji(weather.weather[0].icon)}
             </div>
-            <p className="temp">{Math.round(weather.main.temp)}°C</p>
-            <p className="desc">{weather.weather[0].description}</p>
+            <p className="temp">{convertTemp(weather.main.temp)}</p>            <p className="desc">{weather.weather[0].description}</p>
             <div className="details">
               <span>💧 {weather.main.humidity}%</span>
               <span>💨 {weather.wind.speed} m/s</span>
-              <span>🌡️ Feels like {Math.round(weather.main.feels_like)}°C</span>
-            </div>
+              <span>🌡️ Feels like {convertTemp(weather.main.feels_like)}</span>
+              <span>🌅 {new Date(weather.sys.sunrise * 1000).toLocaleTimeString('en', { hour: '2-digit', minute: '2-digit' })}</span>
+<span>🌇 {new Date(weather.sys.sunset * 1000).toLocaleTimeString('en', { hour: '2-digit', minute: '2-digit' })}</span>            </div>
           </div>
         )}
 
@@ -157,7 +169,7 @@ function App() {
                   <div style={{ fontSize: '28px' }}>
                     {getEmoji(day.weather[0].icon)}
                   </div>
-                  <p className="f-temp">{Math.round(day.main.temp)}°C</p>
+                  <p className="f-temp">{convertTemp(day.main.temp)}</p>
                 </div>
               ))}
             </div>

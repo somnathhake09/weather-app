@@ -1,75 +1,78 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# 🌦️ Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive weather application built with React that allows users to search for a city and view current weather information through a clean and simple interface.
 
-## Available Scripts
+## 🚀 Live Demo
 
-In the project directory, you can run:
+[View Live Weather App]((https://weather-app-seven-fawn-35.vercel.app/))
 
-### `npm start`
+## 📌 About the Project
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project was built to practice React development and working with real-time weather data.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users can search for a city and get weather information in an easy-to-understand format.
 
-### `npm test`
+## ✨ Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 🔍 Search weather by city name
+- 🌡️ Display current temperature
+- 🌤️ Weather condition information
+- 💧 Humidity information
+- 💨 Wind speed information
+- 📱 Responsive design
+- ⚡ Simple and user-friendly interface
+- ❌ Error handling for invalid city searches
 
-### `npm run build`
+## 🛠️ Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React.js
+- JavaScript
+- HTML5
+- CSS3
+- Weather API
+- Create React App
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🤖 AI-Assisted Development
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+AI tools were used during the development process to:
 
-### `npm run eject`
+- Explore implementation approaches
+- Assist with React and JavaScript code
+- Help with debugging
+- Improve UI ideas
+- Understand API integration
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The project was reviewed, tested, modified and deployed as part of the learning process.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📚 Learning Outcomes
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Through this project, I practiced:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- React components
+- State management
+- Handling user input
+- API integration
+- Fetching and displaying data
+- Error handling
+- Responsive UI development
+- Debugging
+- Git and GitHub workflow
 
-## Learn More
+## 🔮 Future Improvements
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 📍 Detect user's current location
+- 📅 Add multi-day weather forecast
+- 🌙 Add dark/light mode
+- 🌍 Add more detailed weather information
+- 🎨 Improve weather animations and UI
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 👨‍💻 Author
 
-### Code Splitting
+**Somnath Hake**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- GitHub: https://github.com/somnathhake09
+- LinkedIn: https://www.linkedin.com/in/somnath-hake09
 
-### Analyzing the Bundle Size
+## 📄 Disclaimer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# weather-app
-Weather App (Built with Claude AI)
->>>>>>> 3b37f3e56b261a7bb174db5c9b8e1d9ff3cc9729
+This project is created for learning and portfolio purposes.
